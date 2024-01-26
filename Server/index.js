@@ -22,7 +22,7 @@ app.get('/get',(req,res)=>{
 })
 app.put('/update/:id',(req, res) =>{
     const {id} = req.params;
-    console.log(id)
+    todoModelj.find
 })
 app.listen(3001, ()=>{
     console.log("server us start") // port 

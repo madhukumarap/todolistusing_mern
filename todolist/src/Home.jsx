@@ -10,11 +10,17 @@ const Home = () => {
       .then(result => setTodo(result.data))
       .catch(err => console.log(err));
   }, []);
-const handleEdit = (id) =>{
-    axios.put('http://localhost:3001/update/'+id)
-    .then(result => setTodo(result))
-    .catch(err => console.log(err));
-}
+  const handleEdit = (id) => {
+    axios.put(`http://localhost:3001/update/${id}`, { /* provide data to update */ })
+      .then(response => {
+        // handle the response, if needed
+        console.log(response.data);
+        // Update the state with the updated todo list
+        setTodo(response.data);
+      })
+      .catch(err => console.log(err));
+  };
+  
   return (
     <div>
       <h2>Todo List</h2>
